@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immobilien Kauf & Verkauf | Ihr Partner für Traumimmobilien</title>
+    <meta name="description" content="Entdecken Sie exklusive Immobilienangebote zum Kauf und Verkauf. Wir helfen Ihnen, Ihr Traumhaus zu finden oder Ihre Immobilie zum besten Preis zu verkaufen.">
+    <meta name="keywords" content="Immobilien, Haus kaufen, Haus verkaufen, Traumhaus, Immobilienmakler, Wohnung kaufen, Wohnung verkaufen">
+    <link rel="canonical" href="https://test.twisted-style.de/landingpage">
+    <link rel="icon" type="image/png" href="placeholder.php?width=32&height=32&text=IM">
+    <meta property="og:title" content="Immobilien Kauf & Verkauf | Ihr Partner für Traumimmobilien">
+    <meta property="og:description" content="Entdecken Sie exklusive Immobilienangebote zum Kauf und Verkauf. Wir helfen Ihnen, Ihr Traumhaus zu finden oder Ihre Immobilie zum besten Preis zu verkaufen.">
+    <meta property="og:image" content="placeholder.php?width=1200&height=630&text=Immobilien+Kauf+%26+Verkauf">
+    <meta property="og:url" content="https://test.twisted-style.de/landingpage">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Immobilien Kauf & Verkauf | Ihr Partner für Traumimmobilien">
+    <meta name="twitter:description" content="Entdecken Sie exklusive Immobilienangebote zum Kauf und Verkauf. Wir helfen Ihnen, Ihr Traumhaus zu finden oder Ihre Immobilie zum besten Preis zu verkaufen.">
+    <meta name="twitter:image" content="placeholder.php?width=1200&height=630&text=Immobilien+Kauf+%26+Verkauf">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Ihr Unternehmen">
+    <meta name="language" content="de">
+    <title>Immobilien Kauf & Verkauf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: #2E8B57;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        #hero {
+            position: relative;
+            background: url('header.jpg') no-repeat center center/cover;
+            color: #000;
+            padding: 100px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            z-index: 1;
+        }
+        
+        #hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        #hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            background: #3CB371;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        #sell-property {
+            background-color: #F0FFF0;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        #sell-property h2 {
+            font-size: 2.5rem;
+            color: #2E8B57;
+            margin-bottom: 20px;
+        }
+        
+        #sell-property p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #sell-property .btn {
+            background-color: #3CB371;
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        #sell-property .btn:hover {
+            background-color: #228B22;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            #sell-property h2 {
+                font-size: 2rem;
+            }
+            #sell-property p {
+                font-size: 1rem;
+            }
+            #sell-property .btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+        
+        #about,
+        #properties,
+        #contact {
+            padding: 60px 0;
+        }
+        
+        #properties .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .property-card {
+            background: #f4f4f4;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .property-card img.property-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        #stats {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        #stats h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-card h3 {
+            font-size: 3rem;
+            color: #2E8B57;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .stat-card p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        #social {
+            background-color: #2E8B57;
+            padding: 60px 0;
+            text-align: center;
+            color: #fff;
+        }
+        
+        #social h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #3CB371;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #228B22;
+            transform: translateY(-5px);
+        }
+        
+        .social-links a i {
+            margin-right: 10px;
+        }
+        
+        #faq {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+        
+        #faq h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        
+        .faq-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .faq-item h3 {
+            font-size: 1.5rem;
+            color: #2E8B57;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .faq-item h3::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #2E8B57;
+        }
+        
+        .faq-item.active h3::after {
+            content: '−';
+        }
+        
+        .faq-item p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            display: none;
+            margin-top: 10px;
+        }
+        
+        .faq-item.active p {
+            display: block;
+        }
+        
+        #customer-reviews {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        #customer-reviews h2 {
+            font-size: 2.5rem;
+            color: #2E8B57;
+            /* Naturgrün */
+            margin-bottom: 40px;
+        }
+        
+        .reviews-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .review-card {
+            flex: 0 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            scroll-snap-align: start;
+            width: 250px;
+        }
+        
+        .review-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        .review-rating {
+            text-align: right;
+        }
+        
+        .rating-text {
+            font-size: 1rem;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .stars {
+            font-size: 1.5rem;
+            color: #FFD700;
+        }
+        
+        .reviews-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .reviews-container::-webkit-scrollbar-thumb {
+            background-color: #2E8B57;
+            border-radius: 4px;
+        }
+        
+        .reviews-container::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+        
+        #contact {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #contact form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        #contact form input,
+        #contact form textarea {
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #contact form input:focus,
+        #contact form textarea:focus {
+            border-color: #2E8B57;
+            box-shadow: 0 0 8px rgba(46, 139, 87, 0.3);
+            outline: none;
+        }
+        
+        #contact form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        #contact form button {
+            background: #2E8B57;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        #contact form button:hover {
+            background-color: #228B22;
+            transform: translateY(-2px);
+        }
+        
+        #contact form button:active {
+            transform: translateY(0);
+        }
+        
+        .parallax-demo {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .parallax-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150%;
+            background-image: url('parallax.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+        
+        .parallax-content {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+        
+        .parallax-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .parallax-content p {
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            background: #2E8B57;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            #hero h2 {
+                font-size: 2rem;
+            }
+            #hero p {
+                font-size: 1rem;
+            }
+            .btn {
+                padding: 8px 16px;
+            }
+            .property-card img.property-image {
+                height: 150px;
+            }
+            .stat-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .social-links a {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Immobilien Kauf & Verkauf</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">Über Uns</a></li>
+                    <li><a href="#properties">Immobilien</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Kaufen oder Verkaufen Sie Ihr Traumhaus</h2>
+            <p>Entdecken Sie unsere exklusiven Immobilienangebote oder profitieren Sie von unserem Verkaufsservice.</p> <a href="#properties" class="btn">Jetzt entdecken</a> </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>Über Uns</h2>
+            <p>Seit unserer Gründung vor einem Jahr haben wir uns schnell als zuverlässiger Partner im Immobilienbereich etabliert. Unser junges, engagiertes Team bringt frische Ideen und viel Leidenschaft mit, um Ihnen beim Kauf oder Verkauf Ihrer Immobilie
+                zur Seite zu stehen. Mit bereits zahlreichen erfolgreich abgeschlossenen Projekten haben wir uns das Vertrauen unserer Kunden erarbeitet und freuen uns darauf, auch Sie auf Ihrem Weg zum Traumhaus zu begleiten.</p>
+        </div>
+    </section>
+
+    <section id="sell-property">
+        <div class="container">
+            <h2>Sie wollen Ihre Immobilie verkaufen?</h2>
+            <p>Wir helfen Ihnen dabei, den besten Preis für Ihre Immobilie zu erzielen – schnell, transparent und ohne unnötigen Aufwand. Unser Team begleitet Sie durch den gesamten Verkaufsprozess, von der professionellen Bewertung über die gezielte Vermarktung
+                bis zum erfolgreichen Abschluss. Kontaktieren Sie uns noch heute für eine kostenlose und unverbindliche Beratung.</p> <a href="#contact" class="btn">Jetzt verkaufen</a> </div>
+    </section>
+
+    <section id="properties">
+        <div class="container">
+            <h2>Unsere Immobilien</h2>
+            <div class="property-grid">
+                <!-- Einfamilienhaus -->
+                <div class="property-card"> <img src="property.jpg" alt="Einfamilienhaus" class="property-image">
+                    <h3>Einfamilienhaus</h3>
+                    <p><strong>Grundfläche:</strong> 450 m²<br> <strong>Wohnfläche:</strong> 140 m²<br> <strong>Etagen:</strong> 2<br> <strong>Zimmer:</strong> 4<br> <strong>Standort:</strong> Potsdam</p>
+                </div>
+
+                <!-- Stadthaus -->
+                <div class="property-card">
+                    <img src="property.jpg" alt="Stadthaus" class="property-image">
+                    <h3>Stadthaus</h3>
+                    <p><strong>Grundfläche:</strong> 300 m²<br>
+                        <strong>Wohnfläche:</strong> 120 m²<br>
+                        <strong>Etagen:</strong> 3<br>
+                        <strong>Zimmer:</strong> 5<br>
+                        <strong>Standort:</strong> Berlin-Mitte</p>
+                </div>
+
+                <!-- Luxusvilla -->
+                <div class="property-card">
+                    <img src="property.jpg" alt="Luxusvilla" class="property-image">
+                    <h3>Luxusvilla</h3>
+                    <p><strong>Grundfläche:</strong> 1.200 m²<br>
+                        <strong>Wohnfläche:</strong> 350 m²<br>
+                        <strong>Etagen:</strong> 2<br>
+                        <strong>Zimmer:</strong> 6<br>
+                        <strong>Standort:</strong> Starnberger See</p>
+                </div>
+
+                <!-- Wohnblock -->
+                <div class="property-card">
+                    <img src="property.jpg" alt="Wohnblock" class="property-image">
+                    <h3>Wohnblock</h3>
+                    <p><strong>Grundfläche:</strong> 2.000 m²<br>
+                        <strong>Wohnfläche:</strong> 800 m² (insgesamt)<br>
+                        <strong>Etagen:</strong> 4<br>
+                        <strong>Wohnungen:</strong> 8<br>
+                        <strong>Standort:</strong> Leipzig</p>
+                </div>
+
+                <!-- Reihenhaus -->
+                <div class="property-card">
+                    <img src="property.jpg" alt="Reihenhaus" class="property-image">
+                    <h3>Reihenhaus</h3>
+                    <p><strong>Grundfläche:</strong> 250 m²<br>
+                        <strong>Wohnfläche:</strong> 110 m²<br>
+                        <strong>Etagen:</strong> 2<br>
+                        <strong>Zimmer:</strong> 3<br>
+                        <strong>Standort:</strong> Köln</p>
+                </div>
+
+                <!-- Penthouse -->
+                <div class="property-card">
+                    <img src="property.jpg" alt="Penthouse" class="property-image">
+                    <h3>Penthouse</h3>
+                    <p><strong>Grundfläche:</strong> 150 m²<br>
+                        <strong>Wohnfläche:</strong> 150 m²<br>
+                        <strong>Etagen:</strong> 1 (Toplage)<br>
+                        <strong>Zimmer:</strong> 3<br>
+                        <strong>Standort:</strong> Frankfurt am Main</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="stats">
+        <div class="container">
+            <h2>Unsere Erfolge in Zahlen</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 data-target="250">0</h3>
+                    <p>Zufriedene Kunden</p>
+                </div>
+                <div class="stat-card">
+                    <h3 data-target="120">0</h3>
+                    <p>Gekaufte Objekte</p>
+                </div>
+                <div class="stat-card">
+                    <h3 data-target="90">0</h3>
+                    <p>Verkaufte Objekte</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="parallax-demo">
+        <div class="parallax-background"></div>
+        <div class="parallax-content">
+            <h2>Entdecken Sie neue Perspektiven</h2>
+            <blockquote class="quote">
+                <p>"Immobilien sind mehr als nur Steine und Beton – sie sind die Grundlage für Sicherheit, Wachstum und Zukunftschancen. Jede Investition ist ein Schritt in Richtung Unabhängigkeit."</p>
+                <footer>– Ein erfahrener Immobilienexperte</footer>
+            </blockquote>
+            <p>Nutzen Sie die Chance und investieren Sie in Ihre Zukunft – wir begleiten Sie dabei.</p>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <h2>Häufig gestellte Fragen</h2>
+            <div class="faq-item">
+                <h3>Wie lange dauert der Verkaufsprozess?</h3>
+                <p>Der Verkaufsprozess kann je nach Immobilie und Marktlage zwischen 2 und 6 Monaten dauern. Wir unterstützen Sie dabei, den Prozess so effizient wie möglich zu gestalten.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Welche Kosten fallen beim Kauf an?</h3>
+                <p>Neben dem Kaufpreis fallen Notar- und Grundbuchkosten, Grunderwerbssteuer sowie eventuelle Maklerprovisionen an. Wir beraten Sie gerne zu allen anfallenden Kosten.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Wie finde ich die richtige Immobilie zum Kauf?</h3>
+                <p>Wir analysieren Ihre Bedürfnisse, Vorlieben und Ihr Budget, um Ihnen passende Immobilien vorzuschlagen. Unser Ziel ist es, Ihr Traumhaus zu finden.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Kann ich meine Immobilie auch ohne Makler verkaufen?</h3>
+                <p>Ja, das ist möglich. Allerdings übernehmen wir als Makler die Vermarktung, Preisverhandlung und Organisation, um Ihnen Zeit und Aufwand zu ersparen.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Wie wird der Wert meiner Immobilie bestimmt?</h3>
+                <p>Wir erstellen eine professionelle Marktanalyse unter Berücksichtigung von Lage, Zustand, Ausstattung und aktuellen Markttrends, um den realistischen Wert zu ermitteln.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Was passiert, wenn meine Immobilie nicht verkauft wird?</h3>
+                <p>Wir passieren unsere Strategie an, z. B. durch Preisoptimierung oder gezieltere Vermarktung, um den Verkauf erfolgreich abzuschließen.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Kann ich eine Immobilie auch als Kapitalanlage kaufen?</h3>
+                <p>Ja, wir bieten spezialisierte Beratung für Kapitalanleger und helfen Ihnen, renditestarke Immobilien zu finden.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Welche Unterlagen benötige ich für den Verkauf?</h3>
+                <p>Typische Unterlagen sind der Grundbuchauszug, der Energieausweis, Grundrisse und ggf. Baubeschreibungen. Wir unterstützen Sie bei der Zusammenstellung.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Wie läuft die Finanzierung beim Kauf ab?</h3>
+                <p>Wir arbeiten mit renommierten Banken und Finanzierungspartnern zusammen, um Ihnen maßgeschneiderte Finanzierungsangebote zu unterbreiten.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Gibt es eine Garantie für den Verkaufserfolg?</h3>
+                <p>Während wir keine Garantie geben können, setzen wir alles daran, Ihre Immobilie erfolgreich zu vermarkten, basierend auf unserer langjährigen Erfahrung und Expertise.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="customer-reviews">
+        <div class="container">
+            <h2>Das sagen unsere Kunden</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <img src="customer.jpg" alt="Kunde 1" class="review-image">
+                    <div class="review-rating">
+                        <p>Super toller Service! Alles war perfekt organisiert und unkompliziert. Vielen Dank!</p>
+                        <span class="rating-text">5 von 5 Sternen</span>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <img src="customer.jpg" alt="Kunde 2" class="review-image">
+                    <div class="review-rating">
+                        <p>Sehr guter Service, aber die Kommunikation hätte etwas schneller sein können.</p>
+                        <span class="rating-text">4 von 5 Sternen</span>
+                        <div class="stars">
+                            ★★★★☆
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <img src="customer.jpg" alt="Kunde 3" class="review-image">
+                    <div class="review-rating">
+                        <p>Es war okay, aber es gab einige Verzögerungen bei der Abwicklung.</p>
+                        <span class="rating-text">3 von 5 Sternen</span>
+                        <div class="stars">
+                            ★★★☆☆
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <img src="customer.jpg" alt="Kunde 4" class="review-image">
+                    <div class="review-rating">
+                        <p>Absolut zufrieden! Alles wurde schnell und professionell erledigt.</p>
+                        <span class="rating-text">5 von 5 Sternen</span>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <img src="customer.jpg" alt="Kunde 5" class="review-image">
+                    <div class="review-rating">
+                        <p>Gute Erfahrung, aber die Dokumentation war etwas unübersichtlich.</p>
+                        <span class="rating-text">4 von 5 Sternen</span>
+                        <div class="stars">
+                            ★★★★☆
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <img src="customer.jpg" alt="Kunde 6" class="review-image">
+                    <div class="review-rating">
+                        <p>Leider nicht zufrieden. Es gab einige Probleme, die nicht gelöst wurden.</p>
+                        <span class="rating-text">2 von 5 Sternen</span>
+                        <div class="stars">
+                            ★★☆☆☆
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <img src="customer.jpg" alt="Kunde 7" class="review-image">
+                    <div class="review-rating">
+                        <p>Fantastisch! Wir haben unser Traumhaus gefunden. Vielen Dank!</p>
+                        <span class="rating-text">5 von 5 Sternen</span>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <img src="customer.jpg" alt="Kunde 8" class="review-image">
+                    <div class="review-rating">
+                        <p>Gute Beratung, aber die Preise waren etwas höher als erwartet.</p>
+                        <span class="rating-text">4 von 5 Sternen</span>
+                        <div class="stars">
+                            ★★★★☆
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <img src="customer.jpg" alt="Kunde 9" class="review-image">
+                    <div class="review-rating">
+                        <p>Ganz mies! Der Service war schlecht und die Kommunikation katastrophal.</p>
+                        <span class="rating-text">1 von 5 Sternen</span>
+                        <div class="stars">
+                            ★☆☆☆☆
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="social">
+        <div class="container">
+            <h2>Folgen Sie uns</h2>
+            <div class="social-links">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <form id="contact-form">
+                <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+                <input type="email" id="email" name="email" placeholder="Ihre E-Mail" required>
+                <textarea id="message" name="message" placeholder="Ihre Nachricht" required></textarea>
+                <button type="submit">Nachricht senden</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Immobilien Kauf & Verkauf. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('h3');
+                const answer = item.querySelector('p');
+
+                question.addEventListener('click', () => {
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    item.classList.toggle('active');
+                });
+            });
+        });
+
+        const reviewsContainer = document.querySelector('.reviews-container');
+        let scrollAmount = 0;
+        const scrollStep = 270;
+
+        function autoScroll() {
+            scrollAmount += scrollStep;
+            if (scrollAmount >= reviewsContainer.scrollWidth) {
+                scrollAmount = 0;
+            }
+            reviewsContainer.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        setInterval(autoScroll, 3000);
+
+        const toTopButton = document.createElement('button');
+        toTopButton.innerHTML = '&uarr;';
+        toTopButton.id = 'to-top-button';
+        document.body.appendChild(toTopButton);
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+    #to-top-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #2E8B57; /* Naturgrün */
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        display: none; /* Standardmäßig ausgeblendet */
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    #to-top-button:hover {
+        background-color: #228B22; /* Dunkleres Grün */
+        transform: scale(1.1);
+    }
+`;
+        document.head.appendChild(style);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                toTopButton.style.display = 'block';
+            } else {
+                toTopButton.style.display = 'none';
+            }
+        });
+
+        toTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden.');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const statCards = document.querySelectorAll('.stat-card h3');
+
+            function animateNumber(element, target) {
+                const duration = 2000;
+                const start = 0;
+                const increment = target / (duration / 16);
+
+                let current = start;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        current = target;
+                    }
+                    element.textContent = Math.floor(current) + (element.getAttribute('data-target') > 100 ? '+' : '');
+                }, 16);
+            }
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = +entry.target.getAttribute('data-target');
+                        animateNumber(entry.target, target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            statCards.forEach(stat => {
+                observer.observe(stat);
+            });
+        });
+
+        document.addEventListener('scroll', () => {
+            const parallaxSection = document.querySelector('.parallax-demo');
+            const scrollPosition = window.scrollY;
+            parallaxSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+        });
+    </script>
+</body>
+
+</html>
