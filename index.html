@@ -123,17 +123,14 @@
         
         .slide:nth-child(1) {
             background-image: url('header.jpg');
-            /* Bild für Slide 1 */
         }
         
         .slide:nth-child(2) {
             background-image: url('header.jpg');
-            /* Bild für Slide 2 */
         }
         
         .slide:nth-child(3) {
             background-image: url('header.jpg');
-            /* Bild für Slide 3 */
         }
         
         .slide .container {
@@ -142,7 +139,6 @@
             text-align: center;
             color: #000;
             padding-top: 150px;
-            /* Abstand nach oben anpassen */
         }
         
         .slider-control {
@@ -411,7 +407,6 @@
         #customer-reviews h2 {
             font-size: 2.5rem;
             color: #2E8B57;
-            /* Naturgrün */
             margin-bottom: 40px;
         }
         
@@ -623,11 +618,40 @@
                 margin-bottom: 10px;
             }
         }
+        
+        #github-ribbon {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            padding: 5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        #github-ribbon:hover {
+            background-color: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+        }
+        
+        #github-ribbon img {
+            width: 30px;
+            height: 30px;
+        }
     </style>
 </head>
 
 <body>
     <div id="scroll-progressbar"></div>
+
+    <div id="github-ribbon">
+        <a href="https://github.com/marcdziersan/property" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="Fork me on GitHub" />
+        </a>
+    </div>
+
     <div id="loadTimeLayer">
         <span id="loadTime"></span> ms
     </div>
@@ -977,6 +1001,7 @@
             initializeParallax();
             initializeLoadTime();
             initializeCurrentYear();
+            initializeScrollProgressbar();
         });
 
         // Funktionen für den Hero-Slider
@@ -1176,6 +1201,33 @@
         function initializeCurrentYear() {
             const currentYear = new Date().getFullYear();
             document.getElementById('year').textContent = currentYear;
+        }
+
+        // Funktion für die Scroll-Progressbar
+        function initializeScrollProgressbar() {
+            const scrollProgressbar = document.getElementById('scroll-progressbar');
+
+            if (scrollProgressbar) {
+                window.addEventListener('scroll', function() {
+                    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+                    const pageHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrollProgress = (scrollPosition / pageHeight) * 100;
+                    let color;
+                    if (scrollProgress <= 25) {
+                        color = `rgb(${255}, ${Math.floor(scrollProgress * 255 / 25)}, 0)`;
+                    } else if (scrollProgress <= 50) {
+                        color = `rgb(${255 - Math.floor((scrollProgress - 25) * 255 / 25)}, ${255}, 0)`;
+                    } else if (scrollProgress <= 75) {
+                        const blueValue = Math.floor((scrollProgress - 50) * 255 / 25);
+                        color = `rgb(0, ${255 - blueValue}, ${blueValue})`;
+                    } else {
+                        const greenValue = Math.floor((scrollProgress - 75) * 255 / 25);
+                        color = `rgb(0, ${greenValue}, 255)`;
+                    }
+                    scrollProgressbar.style.width = scrollProgress + '%';
+                    scrollProgressbar.style.backgroundColor = color;
+                });
+            }
         }
     </script>
 </body>
