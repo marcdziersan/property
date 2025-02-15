@@ -31,6 +31,31 @@
             color: #333;
         }
         
+        #scroll-progressbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 5px;
+            z-index: 1000;
+        }
+        
+        #loadTimeLayer {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        
         header {
             background: #2E8B57;
             color: #fff;
@@ -602,6 +627,11 @@
 </head>
 
 <body>
+    <div id="scroll-progressbar"></div>
+    <div id="loadTimeLayer">
+        <span id="loadTime"></span> ms
+    </div>
+
     <header>
         <div class="container">
             <h1>Immobilien Kauf & Verkauf</h1>
@@ -935,143 +965,169 @@
         </div>
     </footer>
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) {
-                    slide.classList.add('active');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        setInterval(nextSlide, 5000);
-
-        showSlide(currentSlide);
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        // Initialisierung der Variablen und Event-Listener
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeSlider();
+            initializeSmoothScroll();
+            initializeFAQ();
+            initializeReviews();
+            initializeToTopButton();
+            initializeContactForm();
+            initializeStatsAnimation();
+            initializeParallax();
+            initializeLoadTime();
+            initializeCurrentYear();
         });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const faqItems = document.querySelectorAll('.faq-item');
+        // Funktionen für den Hero-Slider
+        function initializeSlider() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
 
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) slide.classList.add('active');
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            setInterval(nextSlide, 5000);
+            showSlide(currentSlide);
+
+            document.querySelectorAll('.slider-control.prev').forEach(btn => btn.addEventListener('click', prevSlide));
+            document.querySelectorAll('.slider-control.next').forEach(btn => btn.addEventListener('click', nextSlide));
+        }
+
+        // Funktionen für Smooth Scroll zu Ankern
+        function initializeSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Funktionen für den FAQ-Bereich (Akkordeon)
+        function initializeFAQ() {
+            const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const question = item.querySelector('h3');
-                const answer = item.querySelector('p');
-
                 question.addEventListener('click', () => {
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
                         }
                     });
-
                     item.classList.toggle('active');
                 });
             });
-        });
+        }
 
-        const reviewsContainer = document.querySelector('.reviews-container');
-        let scrollAmount = 0;
-        const scrollStep = 270;
+        // Funktionen für die automatische Bildlaufanimation der Kundenbewertungen
+        function initializeReviews() {
+            const reviewsContainer = document.querySelector('.reviews-container');
+            let scrollAmount = 0;
+            const scrollStep = 270;
 
-        function autoScroll() {
-            scrollAmount += scrollStep;
-            if (scrollAmount >= reviewsContainer.scrollWidth) {
-                scrollAmount = 0;
+            function autoScroll() {
+                scrollAmount += scrollStep;
+                if (scrollAmount >= reviewsContainer.scrollWidth) scrollAmount = 0;
+                reviewsContainer.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
             }
-            reviewsContainer.scrollTo({
-                left: scrollAmount,
-                behavior: 'smooth'
+
+            setInterval(autoScroll, 3000);
+        }
+
+        // Funktionen für den "Zurück nach oben"-Button
+        function initializeToTopButton() {
+            const toTopButton = document.createElement('button');
+            toTopButton.innerHTML = '&uarr;';
+            toTopButton.id = 'to-top-button';
+            document.body.appendChild(toTopButton);
+
+            const style = document.createElement('style');
+            style.innerHTML = `
+                #to-top-button {
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    background-color: #2E8B57;
+                    color: white;
+                    border: none;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 24px;
+                    cursor: pointer;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                    display: none;
+                    transition: background-color 0.3s ease, transform 0.3s ease;
+                }
+                #to-top-button:hover {
+                    background-color: #228B22;
+                    transform: scale(1.1);
+                }
+            `;
+            document.head.appendChild(style);
+
+            window.addEventListener('scroll', () => {
+                toTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
+            });
+
+            toTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
         }
 
-        setInterval(autoScroll, 3000);
-
-        const toTopButton = document.createElement('button');
-        toTopButton.innerHTML = '&uarr;';
-        toTopButton.id = 'to-top-button';
-        document.body.appendChild(toTopButton);
-
-        const style = document.createElement('style');
-        style.innerHTML = `
-    #to-top-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #2E8B57; /* Naturgrün */
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        display: none; /* Standardmäßig ausgeblendet */
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    #to-top-button:hover {
-        background-color: #228B22; /* Dunkleres Grün */
-        transform: scale(1.1);
-    }
-`;
-        document.head.appendChild(style);
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                toTopButton.style.display = 'block';
-            } else {
-                toTopButton.style.display = 'none';
-            }
-        });
-
-        toTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        // Funktionen für das Kontaktformular
+        function initializeContactForm() {
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                if (name && email && message) {
+                    alert('Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden.');
+                } else {
+                    alert('Bitte füllen Sie alle Felder aus.');
+                }
             });
-        });
+        }
 
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden.');
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
+        // Funktionen für die Statistik-Animation (Zahlen hochzählen)
+        function initializeStatsAnimation() {
             const statCards = document.querySelectorAll('.stat-card h3');
 
             function animateNumber(element, target) {
                 const duration = 2000;
                 const start = 0;
                 const increment = target / (duration / 16);
-
                 let current = start;
+
                 const timer = setInterval(() => {
                     current += increment;
                     if (current >= target) {
@@ -1094,21 +1150,33 @@
                 threshold: 0.5
             });
 
-            statCards.forEach(stat => {
-                observer.observe(stat);
-            });
-        });
+            statCards.forEach(stat => observer.observe(stat));
+        }
 
-        document.addEventListener('scroll', () => {
+        // Funktionen für den Parallax-Effekt
+        function initializeParallax() {
             const parallaxSection = document.querySelector('.parallax-demo');
-            const scrollPosition = window.scrollY;
-            parallaxSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-        });
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                parallaxSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+            });
+        }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        // Funktionen für die Ladezeit-Anzeige
+        function initializeLoadTime() {
+            const startTime = performance.now();
+            window.addEventListener('load', () => {
+                const endTime = performance.now();
+                const loadTime = endTime - startTime;
+                document.getElementById('loadTime').textContent = loadTime.toFixed(2);
+            });
+        }
+
+        // Funktionen für die Anzeige des aktuellen Jahres im Footer
+        function initializeCurrentYear() {
             const currentYear = new Date().getFullYear();
             document.getElementById('year').textContent = currentYear;
-        });
+        }
     </script>
 </body>
 
