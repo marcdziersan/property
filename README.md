@@ -154,3 +154,4 @@ Das Template dient als Vorlage für eine Landingpage im Immobilienbereich. Es is
 ---
 
 Diese Dokumentation wurde erstellt, um den Entwicklungsprozess des Templates für eine Immobilien-Landingpage transparent und nachvollziehbar zu gestalten.
+Hier heraus entstehendes Template <a href="https://github.com/marcdziersan/webagency" target="_blank">https://github.com/marcdziersan/webagency</a>
