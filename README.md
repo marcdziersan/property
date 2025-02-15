@@ -14,7 +14,7 @@
    - Sicherheit
 4. **Testphase**
 5. **Abnahme und Deployment**
-6. **Wartung und Support**
+6. **Anhang**
 
 ---
 
